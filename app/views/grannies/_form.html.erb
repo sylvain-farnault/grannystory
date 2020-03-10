@@ -1,0 +1,23 @@
+<%= simple_form_for(@granny) do |f| %>
+
+  <div class="form-inputs">
+  <%= f.input :name %>
+  </div>
+
+  <div class="form-inputs">
+  <%= f.input :address %>
+  </div>
+
+  <div class="form-inputs">
+  <%= f.input :birth_date, as: :date, html5: true %>
+  </div>
+
+  <div class="form-inputs">
+  <%= f.input :price %>
+  </div>
+
+
+  <div class="form-actions">
+  <%= f.button :submit,  :class => "btn btn-primary"%>
+</div>
+<% end %>
