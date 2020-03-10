@@ -1,10 +1,12 @@
+<%= render "layouts/navbar" %>
 <h1>Grannies List</h1>
 <ul>
 
 <% @grannies.each do |granny| %>
-    <li><%= link_to granny.name, '#' %></li>
+    <li><%= link_to granny.name, "#" %></li>
   <% end %>
 
 </ul>
 
-<%= link_to "Add a Granny ", new_granny_path(@granny) , :class => "btn btn-primary" %>
+<%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary" %>
+<%= render "layouts/footer" %>
