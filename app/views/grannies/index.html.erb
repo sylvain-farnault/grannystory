@@ -2,7 +2,7 @@
 <ul>
 
 <% @grannies.each do |granny| %>
-    <li><%= link_to granny.name, '#' %></li>
+    <li><%= link_to granny.name, granny_path(granny) %></li>
   <% end %>
 
 </ul>
