@@ -6,11 +6,19 @@ body {
 }
 
 h1 {
-	font-size: 40px;
+	font-family: 'Vollkorn', serif;
+	font-size: 48px;
+	text-align: center;
 }
 
 p {
-	font-size: 32px
+	font-family: 'Vollkorn', sans-serif;
+	font-size: 24px;
+	text-align: center;
+}
 
-
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
