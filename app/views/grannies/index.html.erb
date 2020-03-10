@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+<div class="minVh">
+	<h1>Grannies List</h1>
+	<ul>
+
+		<% @grannies.each do |granny| %>
+
+		<li><%= link_to granny.name, granny_path(granny) %></li>
+		<% end %>
+
+	</ul>
+
+	<%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary" %>
+</div>
+=======
 
 <div class="container">
   <h1>Grannies List</h1>
@@ -21,3 +36,4 @@
 <%= link_to "Add a Granny ", new_granny_path(@granny) , :class => "btn btn-primary" %>
 
 
+>>>>>>> master
