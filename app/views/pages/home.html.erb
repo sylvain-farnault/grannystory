@@ -3,12 +3,74 @@
 	<body>
 
 		<%= render "layouts/navbar" %>
-	
-			<%= image_tag "grannystorytitle.png", :size => "500x400" %>
-		
+ <h1 class="text-align-center">Granny's list</h1>
+ <br>
 
-		<img src="https://cdn.pixabay.com/photo/2015/12/08/01/04/sombrero-1082322_960_720.jpg" alt="">
-		<%= render "layouts/footer" %>
+
+    <div class="container">
+
+    <div class="wrapper">
+     <div class="row">
+            <div class="col-4 col-sm align-items">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
+                Yvonne
+              </div>
+            </div>
+            <div class=" col-4 col-sm">
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+                Marguerite
+              </div>
+            </div>
+            <div class="col-4 col-sm">
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/nature)">
+                Joséphine
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 col-sm align-items">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
+                Yvonne
+              </div>
+              </div>
+          </div>
+        </div>
+
+    </div>
+
+        <div class="col-sm">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+          Marguerite
+        </div>
+        </div>
+        <div class="col-sm">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/nature)">
+          Joséphine
+        </div>
+        </div>
+      </div>
+        <br>
+        <br>
+      <div class="row">
+        <div class="col-sm align-items">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
+          Yvonne
+        </div>
+        </div>
+        <div class="col-sm">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+          Marguerite
+        </div>
+        </div>
+        <div class="col-sm">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/nature)">
+          Joséphine
+        </div>
+        </div>
+      </div>
+
+    </div>
+
 
 	</body>
+		<%= render "layouts/footer" %>
 </head>

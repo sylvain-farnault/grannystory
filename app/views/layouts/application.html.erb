@@ -12,9 +12,16 @@
   <body>
 
 
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+
+      <% if notice %>
+      <p class="notice"></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert"></p>
+      <% end %>
+
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
