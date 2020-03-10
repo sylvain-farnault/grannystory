@@ -1,0 +1,12 @@
+<h2><%= @granny.name %></h2>
+<hr>
+Address : <%= @granny.address %> <br>
+Age : <%= ((Date.today - @granny.birth_date)/365).to_i %> <br>
+Price : <%= @granny.price %>€/h <br>
+<hr>
+<h3>Her passions</h3>
+<!-- iterate through @granny.passions -->
+<hr>
+<%= link_to grannies_path do %>
+  <i class=“fa fa-history”></i> Back to list
+<% end %>

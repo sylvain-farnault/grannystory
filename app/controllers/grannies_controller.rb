@@ -20,6 +20,9 @@ skip_before_action :authenticate_user!, only: [:show, :index]
     @granny = Granny.new
   end
 
+  def show
+  end
+
 
 private
 
