@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel=“stylesheet” href=“path/to/font-awesome/css/font-awesome.min.css”>
+
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TODO</title>
@@ -11,10 +15,12 @@
   </head>
   <body>
 
-
+    <%= render "layouts/navbar" %>
     <%= yield %>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render "layouts/footer" %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>

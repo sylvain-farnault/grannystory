@@ -1,13 +1,13 @@
-<%= render "layouts/navbar" %>
-<h1>Grannies List</h1>
-<ul>
+<div class="minVh">
+	<h1>Grannies List</h1>
+	<ul>
 
-<% @grannies.each do |granny| %>
+		<% @grannies.each do |granny| %>
 
-    <li><%= link_to granny.name, granny_path(granny) %></li>
-  <% end %>
+		<li><%= link_to granny.name, granny_path(granny) %></li>
+		<% end %>
 
-</ul>
+	</ul>
 
-<%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary" %>
-<%= render "layouts/footer" %>
+	<%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary" %>
+</div>
