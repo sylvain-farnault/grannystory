@@ -1,27 +1,11 @@
-<<<<<<< HEAD
-<div class="minVh">
-	<h1>Grannies List</h1>
-	<ul>
-
-		<% @grannies.each do |granny| %>
-
-		<li><%= link_to granny.name, granny_path(granny) %></li>
-		<% end %>
-
-	</ul>
-
-	<%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary" %>
-</div>
-=======
-
-<div class="container">
+<div class="container minVh">
   <h1>Grannies List</h1>
   <div class="cards mt-5">
     <% @grannies.each do |granny| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
 
 
-        <%= link_to granny.name, granny_path(granny) , :class => "btn btn-primary" %>
+        <%= link_to granny.name, granny_path(granny) %>
 
         <div class="badges-container">
 
@@ -30,10 +14,11 @@
       </div>
     <% end %>
   </div>
+  <%= link_to "Add a Granny ", new_granny_path(@granny) , :class => "btn btn-primary" %>
 </div>
 
 
-<%= link_to "Add a Granny ", new_granny_path(@granny) , :class => "btn btn-primary" %>
 
 
->>>>>>> master
+
+
