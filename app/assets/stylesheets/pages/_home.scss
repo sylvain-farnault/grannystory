@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 body {
-	background: yellow; 
+
+	background: $gradient;
+
 }
 
 h1 {
@@ -9,7 +11,6 @@ h1 {
 
 p {
 	font-size: 32px
-	background: $bleupastel;
 
 
 }
