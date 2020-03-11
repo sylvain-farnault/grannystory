@@ -26,7 +26,7 @@
       <% if alert %>
       <p class="alert"><%= alert %></p>
       <% end %>
-    <%= render "layouts/footer" %>
+    <%= render "layouts/footer" unless current_page?(root_path) %>
 
     <%= javascript_include_tag "application" %>
 

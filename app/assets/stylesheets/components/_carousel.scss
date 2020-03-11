@@ -1,1 +1,48 @@
-_carousel.scss
+.carousel-inner {
+
+  /* Full height */
+  height: 89vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.resize_fit_center {
+    max-width:100%;
+    max-height:100%;
+    vertical-align: middle;
+}
+
+.btn {
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: inline;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+
+}
+
+
+.btnimg {
+  position: absolute;
+}
+// AVEC FOOTER 81vh
+// SANS FOOTER
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 175px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    align-content: center;
+}
