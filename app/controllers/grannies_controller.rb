@@ -25,6 +25,7 @@ skip_before_action :authenticate_user!, only: [:show, :index]
   end
 
   def show
+    @booking = Booking.new
   end
 
   def destroy
