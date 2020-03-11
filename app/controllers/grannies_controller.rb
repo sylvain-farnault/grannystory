@@ -23,6 +23,23 @@ skip_before_action :authenticate_user!, only: [:show, :index]
   def show
   end
 
+  def destroy
+    @granny = Granny.find(params[:id])
+    @granny.destroy
+
+    redirect_to grannies_path
+  end
+
+  def edit; end
+
+  def update
+    @granny.update(granny_params)
+if @granny.save
+      redirect_to grannies_path
+    else
+      render :edit
+    end
+  end
 
 private
 
