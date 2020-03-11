@@ -6,6 +6,10 @@ Price : <%= @granny.price %>€/h <br>
 <hr>
 <h3>Her passions</h3>
 <!-- iterate through @granny.passions -->
+<% @granny.passions.each do |passion| %>
+  <p><%= passion.name %></p>
+<% end %>
+
 <hr>
 <%= link_to grannies_path do %>
   <i class=“fa fa-history”></i> Back to list

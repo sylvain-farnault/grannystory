@@ -10,7 +10,10 @@ skip_before_action :authenticate_user!, only: [:show, :index]
     @granny = Granny.new(granny_params)
     @granny.user = current_user
     if @granny.save
-      redirect_to grannies_path
+      params[:granny][:passion_ids].drop(1).each do |passion_id|
+        GrannyPassion.create(granny: @granny, passion: Passion.find(passion_id))
+      end
+      redirect_to granny_path(@granny)
     else
       render :new
     end
@@ -18,6 +21,7 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
   def new
     @granny = Granny.new
+    @passions = Passion.all
   end
 
   def show
@@ -32,7 +36,7 @@ def set_granny
 
 
 def granny_params
-    params.require(:granny).permit(:name, :address, :birth_date, :price)
+    params.require(:granny).permit(:name, :address, :birth_date, :price, :passions)
   end
 
 
