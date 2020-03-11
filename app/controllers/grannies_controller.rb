@@ -49,7 +49,7 @@ skip_before_action :authenticate_user!, only: [:show, :index]
     if @granny.update(granny_params)
       @actual_passions = @granny.passions
       @actual_passions.each do |passion|
-        if !(params[:granny][:passion_ids].drop(1).include? passion.id)
+        if !(params[:granny][:passion_ids].drop(1).include? passion.id.to_s)
           granny_passion = GrannyPassion.where(granny: @granny, passion: passion)
           granny_passion[0].destroy
         end
