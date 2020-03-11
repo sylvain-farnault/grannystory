@@ -57,7 +57,7 @@ def set_granny
 
 
 def granny_params
-    params.require(:granny).permit(:name, :address, :birth_date, :price)
+    params.require(:granny).permit(:name, :address, :birth_date, :price, :photo)
   end
 
 
