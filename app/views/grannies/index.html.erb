@@ -1,29 +1,19 @@
-<div class="container minVh">
+<h1>All Grannies availables </h1>
+<div class="cards mt-5">
+  <% @grannies.each do |granny| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
+    <%= link_to granny.name, granny_path(granny) %>
+    <div class="badges-container">
 
-  <h1>All Grannies availables </h1>
-  <div class="cards mt-5">
-    <% @grannies.each do |granny| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
-
-
-      <%= link_to granny.name, granny_path(granny) %>
-
-      <div class="badges-container">
-
-
-      </div>
     </div>
-
-    <% end %>
-
   </div>
-
-  <br>
-    <div class="col-sm-4 text-center">
-      <%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary btn-lg " %>
-    </div>
-
+  <% end %>
 </div>
+<br>
+<div class="col-sm-4 text-center">
+  <%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary btn-lg " %>
+</div>
+
 
 
 

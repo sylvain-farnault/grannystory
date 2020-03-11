@@ -6,12 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-
-puts "Creating Users"
+puts "Creating one User"
 
 user = User.create!(
-  email: "dalton@gmail.com",
-  password: "password1"
+  email: "test@gmail.com",
+  password: "password"
 )
 
 
@@ -94,5 +93,14 @@ Granny.create!([{
 
 }])
 
-p "Created #{Granny.count} Grannies"
-puts "Grannies created !!"
+puts " => #{Granny.count} Grannies created"
+
+Passion.destroy_all
+passions = ['tarot', 'walk', 'poney riding', 'scrabble', 'walking frame riding', 'cooking', 'market', 'knit', 'crossed words', 'les feux de l\'amour']
+
+passions.each do |passion|
+  new_passion = Passion.new(name: passion)
+  new_passion.save
+end
+
+puts " => #{Passion.count} Passions created"

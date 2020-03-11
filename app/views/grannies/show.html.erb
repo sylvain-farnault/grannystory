@@ -6,24 +6,24 @@ Price : <%= @granny.price %>€/h <br>
 <hr>
 <h3>Her passions</h3>
 <!-- iterate through @granny.passions -->
+<% @granny.passions.each do |passion| %>
+  <p><%= passion.name %></p>
+<% end %>
 
 
-<div>
-</div>
-  <%= render '/bookings/form', booking: @booking %>
-</div>
 <% if @granny.user == current_user %>
-<%= link_to "Delete a Granny",
+  <%= link_to "Kill #{@granny.name}",
             granny_path(@granny),
             method: :delete,
             data: { confirm: "Are you sure?" },
             class: "delete-button" %>
-      <%end %>
-      </div>
- <% if @granny.user == current_user %>
-<%= link_to 'Edit', edit_granny_path(@granny) %>
+  <br>
+  <%= link_to 'Edit', edit_granny_path(@granny) %>
 <%end %>
+
 <hr>
 <%= link_to grannies_path do %>
   <i class=“fa fa-history”></i> Back to list
 <% end %>
+
+<%= render '/bookings/form', booking: @booking %>
