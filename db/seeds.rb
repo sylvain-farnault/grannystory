@@ -9,8 +9,8 @@ User.destroy_all
 puts "Creating one User"
 
 user = User.create!(
-  email: "dalton@gmail.com",
-  password: "password1"
+  email: "test@gmail.com",
+  password: "password"
 )
 
 
@@ -96,7 +96,7 @@ Granny.create!([{
 puts " => #{Granny.count} Grannies created"
 
 Passion.destroy_all
-passions = ['tarot', 'walk', 'poney riding', 'scrabble', 'walking frame riding', 'cooking', 'market', 'Knit', 'crossed words', 'les feux de l\'amour']
+passions = ['tarot', 'walk', 'poney riding', 'scrabble', 'walking frame riding', 'cooking', 'market', 'knit', 'crossed words', 'les feux de l\'amour']
 
 passions.each do |passion|
   new_passion = Passion.new(name: passion)

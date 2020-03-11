@@ -45,9 +45,20 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
 
   def update
-    @granny.update(granny_params)
-if @granny.save
-      redirect_to grannies_path
+    if @granny.update(granny_params)
+      @actual_passions = @granny.passions
+      @actual_passions.each do |passion|
+        if !(params[:granny][:passion_ids].drop(1).include? passion.id)
+          granny_passion = GrannyPassion.where(granny: @granny, passion: passion)
+          granny_passion[0].destroy
+        end
+      end
+      params[:granny][:passion_ids].drop(1).each do |passion_id|
+        if !(@actual_passions.include? Passion.find(passion_id))
+          GrannyPassion.create(granny: @granny, passion: Passion.find(passion_id))
+        end
+      end
+      redirect_to granny_path(@granny)
     else
       render :edit
     end

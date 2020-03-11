@@ -6,7 +6,7 @@ class GrannyPassionsController < ApplicationController
     if @granny_passion.save
       redirect_to granny_path(@granny)
     else
-      render 'grannys/show'
+      render 'grannies/show'
     end
   end
 
