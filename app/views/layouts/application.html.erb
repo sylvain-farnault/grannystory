@@ -22,7 +22,7 @@
 
        <% if notice %>
     <div class="flash flash-success alert alert-dismissible fade show" role="alert">
-      <span><strong>Yay!</strong> 🎉 you successfully signed with Granny Story</span>
+      <%= notice %>
       <a data-dismiss="alert" aria-label="Close">
         <i class="fa fa-times-circle fa_custom""></i>
       </a>
@@ -31,7 +31,7 @@
 
     <% if alert %>
     <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
-      <span><strong>Mmh</strong> 🤔seems like you haven't registered or don't have an account yet...</span>
+     <%= alert %>
       <a data-dismiss="alert" aria-label="Close">
         <i class="fa fa-times-circle fa_custom"></i>
       </a>
