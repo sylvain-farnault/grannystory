@@ -9,6 +9,9 @@ Price : <%= @granny.price %>€/h <br>
 
 
 <div>
+</div>
+  <%= render '/bookings/form', booking: @booking %>
+</div>
 <% if @granny.user == current_user %>
 <%= link_to "Delete a Granny",
             granny_path(@granny),
