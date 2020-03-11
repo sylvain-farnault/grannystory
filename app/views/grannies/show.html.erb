@@ -10,6 +10,15 @@ Price : <%= @granny.price %>€/h <br>
   <p><%= passion.name %></p>
 <% end %>
 
+<div>
+<%= link_to "Delete a Granny",
+            granny_path(@granny),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "delete-button" %>
+      </div>
+<%= link_to 'Edit', edit_granny_path(@granny) %>
+
 <hr>
 <%= link_to grannies_path do %>
   <i class=“fa fa-history”></i> Back to list

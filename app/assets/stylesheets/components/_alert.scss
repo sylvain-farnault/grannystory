@@ -1,6 +1,37 @@
-.alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+.flash {
+	padding: 16px 24px;
+	justify-content: space-between;
+	align-items: center;
+	background: white;
+	box-shadow: 0 0 8px rgba(0,0,0,0.2);
+	border-radius: 4px;
+	margin: 8px;
+	position: fixed;
+	top: 80%;
+	left: 0px;
+
+}
+
+.flash-success {
+  border: 2px solid #E84A98;
+  width: 35%;
+  text-align: center;
+  width: 40%;
+}
+
+.flash-warning {
+  border: 2px solid #E84A98;
+  width: 43%;
+}
+
+.fa {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    height: 2rem;
+    position: absolute;
+    right: .5rem;
+    text-align: center;
+    top: 1rem;
+    width: 2rem;
 }
