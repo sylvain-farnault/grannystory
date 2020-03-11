@@ -21,23 +21,23 @@
 
 
        <% if notice %>
-    <div class="flash flash-success alert alert-dismissible fade show" role="alert">
-      <span><strong>Yay!</strong> 🎉 you successfully signed with Granny Story</span>
-      <a data-dismiss="alert" aria-label="Close">
-        <i class="fa fa-times-circle fa_custom""></i>
-      </a>
+        <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+          <span><%= notice %></span>
+          <a data-dismiss="alert" aria-label="Close">
+            <i class="fa fa-times-circle fa_custom""></i>
+          </a>
+        </div>
       <% end %>
-    </div>
 
     <% if alert %>
-    <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
-      <span><strong>Mmh</strong> 🤔seems like you haven't registered or don't have an account yet...</span>
-      <a data-dismiss="alert" aria-label="Close">
-        <i class="fa fa-times-circle fa_custom"></i>
-      </a>
+      <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+        <span><strong>Mmh</strong><%= alert %></span>
+        <a data-dismiss="alert" aria-label="Close">
+          <i class="fa fa-times-circle fa_custom"></i>
+        </a>
+      </div>
       <% end %>
-    </div>
-    
+
 
     <%= javascript_include_tag "application" %>
 
