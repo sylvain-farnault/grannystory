@@ -1,8 +1,7 @@
-
-<div class=row>
-  <%= cl_image_tag @granny.photo.key, class: "avatar", crop: :fill %>
-<h2><%= @granny.name %></h2>
-</div>
+<nav class='d-flex align-items-center mt-4'>
+  <%= cl_image_tag @granny.photo.key, class: "avatar-large"%>
+    <h2 class='ml-3'><%= @granny.name %></h2>
+</nav>
 <hr>
 Address : <%= @granny.address %> <br>
 Age : <%= ((Date.today - @granny.birth_date) / 365).to_i %> <br>
@@ -32,3 +31,4 @@ Owner : <%= @granny.user %> <br>
 <% end %>
 
 <%= render '/bookings/form', booking: @booking %>
+
