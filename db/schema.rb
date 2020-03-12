@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_03_12_115243) do
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_grannies_on_user_id"
   end
 
