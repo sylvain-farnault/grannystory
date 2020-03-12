@@ -13,7 +13,8 @@
   <body>
 
     <%= render "layouts/navbar" %>
-    <div class="container minVh">
+
+    <div class="<%= current_page?(root_path) ? "" : "container minVh" %>">
       <%= yield %>
     </div>
 
