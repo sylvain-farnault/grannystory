@@ -1,5 +1,5 @@
 <div class="block1">
-	
+
 
 	<div class="description">
 		<h4><%= @granny.name.capitalize %> <%= ((Date.today - @granny.birth_date) / 365).to_i %> ans </h2>
@@ -17,7 +17,7 @@
 				<h3> Where can I find her ? </h3>
 				<p>Address : <%= @granny.address %></p>
 				<br>
-				Price : <%= @granny.price %>€/h 
+				Price : <%= @granny.price %>€/h
 				Owner : <%= @granny.user %> <br>
 			</div>
 			<hr>
@@ -32,7 +32,7 @@
 				<%= link_to "Edit", edit_granny_path(@granny) %>
 				<% end %>
 
-				<%= link_to grannies_path do %>	
+				<%= link_to grannies_path do %>
 				<i class=“fa fa-history”></i> Back to list
 				<% end %>
 			</div>
@@ -42,7 +42,7 @@
 	<div class="form">
 		<%= render "/bookings/form", booking: @booking %>
 	</div>
-	
+
 
 </div>
 
