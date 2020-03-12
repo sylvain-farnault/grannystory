@@ -22,6 +22,10 @@
       <%= f.input :price %>
     </div>
 
+    <div class="form-inputs">
+      <%= f.input :photo, as: :file %>
+    </div>
+
     <!-- Add selec2 for passions -->
     <%= f.association :passions,
                 collection: Passion.order('name ASC'),

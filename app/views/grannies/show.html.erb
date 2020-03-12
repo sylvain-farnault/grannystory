@@ -1,4 +1,8 @@
+
+<div class=row>
+  <%= cl_image_tag @granny.photo.key, class: "avatar", crop: :fill %>
 <h2><%= @granny.name %></h2>
+</div>
 <hr>
 Address : <%= @granny.address %> <br>
 Age : <%= ((Date.today - @granny.birth_date) / 365).to_i %> <br>

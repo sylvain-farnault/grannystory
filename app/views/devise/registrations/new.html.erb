@@ -1,4 +1,4 @@
- 
+
 
  <h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Créer un compte Granny Story</h2>
  <div class="row justify-content-center">
@@ -21,12 +21,16 @@
                   input_html: { autocomplete: "new-password" } %>
     </div>
 
+    <div class="form-inputs">
+      <%= f.input :photo, as: :file %>
+    </div>
+
     <div class="form-actions">
-      <%= f.button :submit, "SIGN UP", :class => "btn btn-success btn-lg btn-block btn-login" %> 
+      <%= f.button :submit, "SIGN UP", :class => "btn btn-success btn-lg btn-block btn-login" %>
 
       <% end %>
      </div>
-  <%= render "devise/shared/links" %> 
+  <%= render "devise/shared/links" %>
 
   </div>
 </div>

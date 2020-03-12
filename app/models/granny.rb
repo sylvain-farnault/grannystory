@@ -1,4 +1,5 @@
 class Granny < ApplicationRecord
+  has_one_attached :photo
   belongs_to :user
   has_many :granny_passions, dependent: :destroy
   has_many :passions, through: :granny_passions
