@@ -1,30 +1,52 @@
-<h2><%= @granny.name %></h2>
-<hr>
-Address : <%= @granny.address %> <br>
-Age : <%= ((Date.today - @granny.birth_date) / 365).to_i %> <br>
-Price : <%= @granny.price %>€/h <br>
-Owner : <%= @granny.user %> <br>
-<hr>
-<h3>Her passions</h3>
-<!-- iterate through @granny.passions -->
-<% @granny.passions.each do |passion| %>
-  <p><%= passion.name %></p>
-<% end %>
+<div class="block1">
+	
+
+	<div class="description">
+		<h4><%= @granny.name.capitalize %> <%= ((Date.today - @granny.birth_date) / 365).to_i %> ans </h2>
+<br>
+
+		<!-- iterate through @granny.passions -->
+		<h3> Her hobbies </h3>
+
+		<% @granny.passions.each do |passion| %>
+		<p><%= passion.name %></p>
+		<% end %>
+		<div>
+			<br>
+			<div>
+				<h3> Where can I find her ? </h3>
+				<p>Address : <%= @granny.address %></p>
+				<br>
+				Price : <%= @granny.price %>€/h 
+				Owner : <%= @granny.user %> <br>
+			</div>
+			<hr>
+
+			<div class="link">
+				<% if @granny.user == current_user %>
+				<%= link_to "Kill #{@granny.name}",
+                granny_path(@granny),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "delete-button" %>
+				<%= link_to "Edit", edit_granny_path(@granny) %>
+				<% end %>
+
+				<%= link_to grannies_path do %>	
+				<i class=“fa fa-history”></i> Back to list
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+	<div class="form">
+		<%= render "/bookings/form", booking: @booking %>
+	</div>
+	
+
+</div>
 
 
-<% if @granny.user == current_user %>
-  <%= link_to "Kill #{@granny.name}",
-            granny_path(@granny),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "delete-button" %>
-  <br>
-  <%= link_to 'Edit', edit_granny_path(@granny) %>
-<%end %>
 
-<hr>
-<%= link_to grannies_path do %>
-  <i class=“fa fa-history”></i> Back to list
-<% end %>
 
-<%= render '/bookings/form', booking: @booking %>
+
