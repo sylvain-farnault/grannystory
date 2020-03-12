@@ -1,9 +1,10 @@
+<br>
 <h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Créer une Granny Story</h2>
 <div class="row justify-content-center">
   <div class="col-lg-4">
     <br>
 
-    <%= simple_form_for(@granny) do |f| %>
+    <%= simple_form_for(granny) do |f| %>
 
     <div class="form-inputs">
       <%= f.input :name %>
@@ -21,7 +22,10 @@
       <%= f.input :price %>
     </div>
 
-
+    <!-- Add selec2 for passions -->
+    <%= f.association :passions,
+                collection: Passion.order('name ASC'),
+                input_html: {class: "select2", multiple: "true"} %>
     <div class="form-actions">
       <div class="col-sm-12 text-center">
       <%= f.button :submit, :class => "btn btn-primary" %>
@@ -30,10 +34,3 @@
   </div>
 </div>
 </div>
-  
-
-
-
-
-
-
