@@ -1,6 +1,6 @@
- 
 
- <h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Créer un compte Granny Story</h2>
+
+ <h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Créer un compte GrannyStory</h2>
  <div class="row justify-content-center">
   <div class="col-lg-4">
 
@@ -12,6 +12,7 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
+      <%= f.input :name, required: true, placeholder: "Create your username" %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -22,11 +23,11 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "SIGN UP", :class => "btn btn-success btn-lg btn-block btn-login" %> 
+      <%= f.button :submit, "SIGN UP", :class => "btn btn-success btn-lg btn-block btn-login" %>
 
       <% end %>
      </div>
-  <%= render "devise/shared/links" %> 
+  <%= render "devise/shared/links" %>
 
   </div>
 </div>
