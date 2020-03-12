@@ -6,13 +6,50 @@ body {
 }
 
 h1 {
-	font-family: 'Vollkorn', serif;
-	font-size: 48px;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 40px;
 	text-align: center;
+}
+h2 {
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 32px;
+	background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#e52e71));
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    font-weight: 700;
+    
+
+}
+
+h3 {
+	font-family: 'Arsenal', sans-serif;
+	color: black;
+    inline-size: max-content;
+    font-size: 24px;
+
+}
+h4 {
+	font-family: 'Londrina Shadow', cursive;
+	font-size: 40px;
 }
 
 p {
-	font-family: 'Vollkorn', sans-serif;
-	font-size: 24px;
-	text-align: center;
+	font-family: 'Arsenal', sans-serif;
+	font-size: 16px;
+	text-align: align-left;
+}
+
+
+.block1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.formbook {
+	width: auto;
 }
