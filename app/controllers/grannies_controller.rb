@@ -4,6 +4,16 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @grannies = Granny.all
+    @grannies = Granny.geocoded #returns flats with coordinates
+
+    @markers = @grannies.map do |granny|
+      {
+        lat: granny.latitude,
+        lng: granny.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { granny: granny }),
+        image_url: helpers.asset_url('grannybluebig.png')
+      }
+    end
   end
 
   def create
@@ -75,6 +85,5 @@ def set_granny
 def granny_params
     params.require(:granny).permit(:name, :address, :birth_date, :price, :passions, :photo, :passion_ids)
   end
-
-
 end
+

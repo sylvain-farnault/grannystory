@@ -9,6 +9,10 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    <%= f.input :user_alias,
+                label: 'Name',
+                required: true,
+                input_html: { autocomplete: "user-alias" } %>
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
@@ -24,7 +28,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
 

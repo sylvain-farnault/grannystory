@@ -1,0 +1,7 @@
+<h2>
+  <%= link_to granny.name, granny_path(granny) %>
+
+</h2>
+<p><%= ((Date.today - granny.birth_date) / 365).to_i %> ans </p>
+<p>Price : <%= granny.price %>€/h </p>
+<p><%= granny.address %></p>

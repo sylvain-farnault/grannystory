@@ -1,21 +1,24 @@
-<br>
-<h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Book a Granny Story</h2>
-<div class="row justify-content-center">
-  <div class="col-lg-4">
+  <div>
+  <h4 class="text-center mt-7">Book a Granny Story</h2>
+  <div class="row justify-content-center">
+    <div class="formbook">
 
-    <%= simple_form_for([@granny,booking]) do |f| %>
+      <%= simple_form_for([@granny,booking]) do |f| %>
 
-    <div class="form-inputs">
-      <%= f.input :start_date, as: :date, html5: true %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :start_date, as: :date, html5: true %>
+      </div>
 
-    <div class="form-inputs">
-      <%= f.input :end_date, as: :date, html5: true %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :end_date, as: :date, html5: true %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, :class => "btn btn-primary" %>
-      <% end %>
+      <div class="form-actions">
+
+        <div class="col-sm-12 text-center">
+        <%= f.button :submit, :class => "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+  </div>
