@@ -9,7 +9,9 @@ skip_before_action :authenticate_user!, only: [:show, :index]
     @markers = @grannies.map do |granny|
       {
         lat: granny.latitude,
-        lng: granny.longitude
+        lng: granny.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { granny: granny }),
+        image_url: helpers.asset_url('granny_blue2.png')
       }
     end
   end
