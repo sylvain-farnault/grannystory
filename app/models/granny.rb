@@ -9,4 +9,7 @@ class Granny < ApplicationRecord
   validates :birth_date, presence: true
   validates :user, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

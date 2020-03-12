@@ -14,7 +14,13 @@
   <%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary btn-lg " %>
 </div>
 
-
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="pk.eyJ1IjoibGF1ZiIsImEiOiJjazc0amx5Z2UwMDh6M2dxeXU2ejRnd2llIn0.j7-esoFdaZsAPgmEpiBJPg"
+></div>
 
 
 
