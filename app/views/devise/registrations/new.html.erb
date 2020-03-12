@@ -1,10 +1,5 @@
-
-<<<<<<< HEAD
- <h4 class="text-center mt-5">Créer un compte Granny Story</h4>
-=======
-
  <h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Créer un compte GrannyStory</h2>
->>>>>>> master
+
  <div class="row justify-content-center">
   <div class="col-lg-4">
 
@@ -24,6 +19,10 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.input :photo, as: :file %>
     </div>
 
     <div class="form-actions">
