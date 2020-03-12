@@ -12,7 +12,7 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
-      <%= f.input :name, required: true, placeholder: "Create your username" %>
+      <%= f.input :user_alias, label: 'Name', required: true, placeholder: "Create your username" %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
