@@ -1,3 +1,4 @@
+import flatpickr from "flatpickr";
 import "bootstrap";
 
 import { initSelect2 } from './init_select2';
@@ -11,3 +12,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 initMapbox();
 initAutocomplete();
+
+flatpickr("#booking_start_date", {});
+
+flatpickr("#granny_birth_date", {});

@@ -10,6 +10,6 @@ class UsersController < ApplicationController
   end
 
   def name
-    @user_alias
+    self.user_alias
   end
 end
