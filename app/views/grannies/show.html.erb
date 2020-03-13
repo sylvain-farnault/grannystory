@@ -45,6 +45,16 @@
 		<%= render "/bookings/form", booking: @booking %>
 	</div>
 
+  <%= week_calendar number_of_weeks: 1 do |date| %>
+    <%= date %>
+    <% @granny.bookings.each do |booking| %>
+      <% if booking.start_date == date %>
+        GG
+        <% raise %>
+      <% end %>
+    <% end %>
+  <% end %>
+
 </div>
 
 
