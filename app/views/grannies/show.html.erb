@@ -3,7 +3,7 @@
 
 	<div class="description">
     <nav class='d-flex align-items-center mt-4'>
-    <%= cl_image_tag @granny.photo.key, class: "avatar-large"%>
+    <%= cl_image_tag @granny.photo.key, class: "avatar-large" %>
 		<h4><%= @granny.name.capitalize %> <%= ((Date.today - @granny.birth_date) / 365).to_i %> ans </h4>
   </nav>
 <br>
@@ -26,20 +26,24 @@
 			</div>
 			<hr>
 
-			<div class="link">
+			<div class="link row">
 				<% if @granny.user == current_user %>
 				<%= link_to "Kill #{@granny.name}",
                 granny_path(@granny),
                 method: :delete,
                 data: { confirm: "Are you sure?" },
-                class: "delete-button" %>
-				<%= link_to "Edit", edit_granny_path(@granny) %>
-				<% end %> <br>
+                class: "btn btn-outline-warning btn-lg mr-3" %>
+				
+				<% end %> 
 
-				<%= link_to grannies_path do %>	
-				<i class=“fa fa-history”></i> Back to Grannies
+				
+					
+					<%= link_to "Edit", edit_granny_path(@granny), :class => "btn btn-outline-warning btn-lg mr-3" %>
+					
+			
+				<%= link_to "Back to Grannies", grannies_path, :class => "btn btn-outline-warning btn-lg mr-3 " %>
+				
 
-				<% end %>
 			</div>
 		</div>
 
