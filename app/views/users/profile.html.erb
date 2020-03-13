@@ -28,6 +28,11 @@
   </div>
 <% end %>
 <% current_user.bookings.each do |booking| %>
-<h3><%= "#{booking.granny.name} : #{booking.start_date}" %></h3>
+  <div class="booking">
+    <h3><%= booking.granny.name %> </h3>
+    <%= "Date: #{booking.start_date}" %> <br>
+    <%= "Price: #{booking.price} €" %> <br>
+  </div>
 <% end %>
+
 </div>
