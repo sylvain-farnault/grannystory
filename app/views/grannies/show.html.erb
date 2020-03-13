@@ -12,7 +12,7 @@
 		<h3> Her hobbies </h3>
 
 		<% @granny.passions.each do |passion| %>
-		<p><%= passion.name %></p>
+    <span class="badge badge-pill badge-secondary"><%= passion.name %></span>
 		<% end %>
 		<div>
 			<br>
@@ -20,7 +20,7 @@
 				<h3> Where can I find her ? </h3>
 				<p>Address : <%= @granny.address %></p>
 				<br>
-				Price : <%= @granny.price %>€/h 
+				Price : <%= @granny.price %>€/h
 				Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
 
 			</div>
@@ -36,7 +36,7 @@
 				<%= link_to "Edit", edit_granny_path(@granny) %>
 				<% end %> <br>
 
-				<%= link_to grannies_path do %>	
+				<%= link_to grannies_path do %>
 				<i class=“fa fa-history”></i> Back to Grannies
 
 				<% end %>
