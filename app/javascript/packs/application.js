@@ -14,6 +14,19 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 initAutocomplete();
 
-flatpickr("#booking_start_date", {});
+var date = new Date();
+date.setFullYear( date.getFullYear() - 60 );
+console.log(date);
 
-flatpickr("#granny_birth_date", {});
+flatpickr("#granny_birth_date", {
+  maxDate: date,
+  dateFormat: "d.m.Y",
+  "locale": {
+    "firstDayOfWeek": 1 // start week on Monday
+  }
+});
+
+
+flatpickr("#booking_start_date", {
+
+});

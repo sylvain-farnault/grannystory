@@ -18,7 +18,7 @@
 				<h3> Where can I find her ? </h3>
 				<p>Address : <%= @granny.address %></p>
 				<br>
-				Price : <%= @granny.price %>€/h
+				Price : <%= @granny.price %>€/h <br>
 				Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
 			</div>
 			<hr>
@@ -44,6 +44,7 @@
 	<div class="form">
 		<%= render "/bookings/form", booking: @booking %>
 	</div>
+
 </div>
 
 
