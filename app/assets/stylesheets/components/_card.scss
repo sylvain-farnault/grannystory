@@ -1,3 +1,14 @@
+a {
+    animation: none !important;
+    color: pink;
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+a:hover {
+color: orange;
+}
+
 .card-category {
   position: relative;
   background-size: cover;
