@@ -1,4 +1,4 @@
-<h4 class="text-center mt-5"> All Grannies availables </h4>
+<h4 class="text-center mt-5"> Find all Grannies availables </h4>
 <div class="cards mt-5">
   <% @grannies.each do |granny| %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
@@ -11,13 +11,13 @@
 </div>
 <br>
 <div class="col-sm-4 text-center">
-  <%= link_to "Add a Granny ", new_granny_path(@granny), :class => "btn btn-primary btn-lg " %>
+  <%= link_to "Add a new Granny ", new_granny_path(@granny), :class => "btn btn-outline-warning btn-lg " %>
 </div>
-
+<br>
 <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 600px; border-radius: 10px"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="pk.eyJ1IjoibGF1ZiIsImEiOiJjazc0amx5Z2UwMDh6M2dxeXU2ejRnd2llIn0.j7-esoFdaZsAPgmEpiBJPg"
 ></div>

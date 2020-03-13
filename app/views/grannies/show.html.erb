@@ -18,7 +18,7 @@
 				<p>Address : <%= @granny.address %></p>
 				<br>
 				Price : <%= @granny.price %>€/h 
-				Owner : <%= @granny.user %> <br>
+				Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
 			</div>
 			<hr>
 
@@ -30,10 +30,10 @@
                 data: { confirm: "Are you sure?" },
                 class: "delete-button" %>
 				<%= link_to "Edit", edit_granny_path(@granny) %>
-				<% end %>
+				<% end %> <br>
 
 				<%= link_to grannies_path do %>	
-				<i class=“fa fa-history”></i> Back to list
+				<i class=“fa fa-history”></i> Back to Grannies
 				<% end %>
 			</div>
 		</div>

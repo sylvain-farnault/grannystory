@@ -1,10 +1,8 @@
 
-<<<<<<< HEAD
  <h4 class="text-center mt-5">Créer un compte Granny Story</h4>
-=======
 
- <h2 class="text-center mt-5"style="font-family:'Vollkorn', serif">Créer un compte GrannyStory</h2>
->>>>>>> master
+
+
  <div class="row justify-content-center">
   <div class="col-lg-4">
 
@@ -16,7 +14,7 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
-      <%= f.input :user_alias, label: 'Name', required: true, placeholder: "Create your username" %>
+      <%= f.input :user_alias, label: "Name", required: true, placeholder: "Create your username" %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -27,7 +25,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "SIGN UP", :class => "btn btn-success btn-lg btn-block btn-login" %>
+      <%= f.button :submit, "SIGN UP", :class => "btn btn-outline-warning btn-lg btn-block btn-login" %>
 
       <% end %>
      </div>
