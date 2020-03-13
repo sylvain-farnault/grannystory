@@ -11,7 +11,7 @@ skip_before_action :authenticate_user!, only: [:show, :index]
         lat: granny.latitude,
         lng: granny.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { granny: granny }),
-        image_url: helpers.asset_url('granny_blue2.png')
+        image_url: helpers.asset_url('grannybluebig.png')
       }
     end
   end
@@ -83,7 +83,7 @@ def set_granny
 
 
 def granny_params
-    params.require(:granny).permit(:name, :address, :birth_date, :price, :passions)
+    params.require(:granny).permit(:name, :address, :birth_date, :price, :passions, :photo, :passion_ids)
   end
 end
 
