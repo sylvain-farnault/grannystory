@@ -5,95 +5,95 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-puts "Creating one User"
+# User.destroy_all
+# puts "Creating one User"
 
-user = User.create!(
-  email: "test@gmail.com",
-  password: "password"
-)
-
-
+# user = User.create!(
+#   email: "test@gmail.com",
+#   password: "password"
+# )
 
 
-Granny.destroy_all
 
-puts "Creating Grannies"
 
-Granny.create!([{
-  name: "Ma Dalton ",
-  address: "Penitencier de Canyon River",
-  birth_date: "02/03/1915",
-  price: rand(100),
-  user: user
+# Granny.destroy_all
 
-},
-{
-  name: " Nova Mamie ",
-  address: "rue de la yoaoutière",
-  birth_date: "14/02/1939",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Mauricette ",
-  address: "Avenue de la boulette la verité",
-  birth_date: "27/09/1947",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Brigitte Bardot",
-  address: "La manade avec mes poules et mes chiens ",
-  birth_date: "18/08/1950",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Jeannine ",
-  address: "chemin faisant l' orée du bois ",
-  birth_date: "18/12/1953",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Georgette ",
-  address: "au bon pastaga à coté du boulodrome ",
-  birth_date: "17/11/1939",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Becassine ",
-  address: "La Bastille",
-  birth_date: "18/07/1938",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Chantal Goya",
-  address: "Pandi Panda Chine",
-  birth_date: "18/12/1928",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Francoise Dolto",
-  address: "Parc de l'enfant Roi",
-  birth_date: "19/10/1942",
-  price: rand(100),
-  user: user
-},
-{
-  name: "Simone Veil",
-  address: "Pere Lachaise 3ème tombe a droite",
-  birth_date: "18/07/1938",
-  price: rand(100),
-  user: user
+# puts "Creating Grannies"
 
-}])
+# Granny.create!([{
+#   name: "Ma Dalton ",
+#   address: "Penitencier de Canyon River",
+#   birth_date: "02/03/1915",
+#   price: rand(100),
+#   user: user
 
-puts " => #{Granny.count} Grannies created"
+# },
+# {
+#   name: " Nova Mamie ",
+#   address: "rue de la yoaoutière",
+#   birth_date: "14/02/1939",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Mauricette ",
+#   address: "Avenue de la boulette la verité",
+#   birth_date: "27/09/1947",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Brigitte Bardot",
+#   address: "La manade avec mes poules et mes chiens ",
+#   birth_date: "18/08/1950",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Jeannine ",
+#   address: "chemin faisant l' orée du bois ",
+#   birth_date: "18/12/1953",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Georgette ",
+#   address: "au bon pastaga à coté du boulodrome ",
+#   birth_date: "17/11/1939",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Becassine ",
+#   address: "La Bastille",
+#   birth_date: "18/07/1938",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Chantal Goya",
+#   address: "Pandi Panda Chine",
+#   birth_date: "18/12/1928",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Francoise Dolto",
+#   address: "Parc de l'enfant Roi",
+#   birth_date: "19/10/1942",
+#   price: rand(100),
+#   user: user
+# },
+# {
+#   name: "Simone Veil",
+#   address: "Pere Lachaise 3ème tombe a droite",
+#   birth_date: "18/07/1938",
+#   price: rand(100),
+#   user: user
+
+# }])
+
+# puts " => #{Granny.count} Grannies created"
 
 Passion.destroy_all
 passions = ['tarot', 'walk', 'poney riding', 'scrabble', 'walking frame riding', 'cooking', 'market', 'knit', 'crossed words', 'les feux de l\'amour']
