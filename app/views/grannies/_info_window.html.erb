@@ -1,5 +1,5 @@
 <h2>
-  <%= link_to granny.name, granny_path(granny) %>
+  <%= link_to granny.name, granny_path(granny) %> <%= cl_image_tag granny.photo.key, class: "avatar-large"%>
 
 </h2>
 <p><%= ((Date.today - granny.birth_date) / 365).to_i %> ans </p>

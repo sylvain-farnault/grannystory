@@ -1,6 +1,4 @@
 <div class="block1">
-
-
 	<div class="description">
     <nav class='d-flex align-items-center mt-4'>
     <%= cl_image_tag @granny.photo.key, class: "avatar-large" %>
@@ -12,7 +10,7 @@
 		<h3> Her hobbies </h3>
 
 		<% @granny.passions.each do |passion| %>
-		<p><%= passion.name %></p>
+    <span class="badge badge-pill badge-secondary"><%= passion.name %></span>
 		<% end %>
 		<div>
 			<br>
@@ -20,9 +18,8 @@
 				<h3> Where can I find her ? </h3>
 				<p>Address : <%= @granny.address %></p>
 				<br>
-				Price : <%= @granny.price %>€/h 
+				Price : <%= @granny.price %>€/h <br>
 				Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
-
 			</div>
 			<hr>
 
@@ -43,7 +40,6 @@
 			
 				<%= link_to "Back to Grannies", grannies_path, :class => "btn btn-outline-warning btn-lg mr-3 " %>
 				
-
 			</div>
 		</div>
 
@@ -52,8 +48,8 @@
 		<%= render "/bookings/form", booking: @booking %>
 	</div>
 
-
 </div>
+
 
 
 

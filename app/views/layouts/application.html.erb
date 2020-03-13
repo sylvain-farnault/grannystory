@@ -9,12 +9,13 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
   <body>
 
     <%= render "layouts/navbar" %>
 
-    <div class="background <%= current_page?(root_path) ? "" : "container minVh" %>">
+    <div class="background <%= current_page?(root_path) ? "" : "container minVh mb-5" %>">
       <%= yield %>
     </div>
 

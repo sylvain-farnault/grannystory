@@ -19,9 +19,14 @@
       <% unless current_user %>
         <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
       <% end %>
-      <li class="nav-item dropdown">
 
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <li class="nav-item dropdown">
+      <% if current_user %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+        <%= cl_image_tag 'https://res.cloudinary.com/dlnimaboq/image/upload/v1584108159/user_uml7td.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+        <% end %>
         <div class="foreground dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if current_user %>
             <%= link_to "My Profile", profile_path, class: "dropdown-item" %>

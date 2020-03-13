@@ -8,4 +8,9 @@ class UsersController < ApplicationController
        redirect_to :back
     end
   end
+
+
+  def name
+    self.user_alias
+  end
 end
