@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   def name
     self.user_alias
   end
