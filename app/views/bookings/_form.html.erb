@@ -3,7 +3,7 @@
   <div class="row justify-content-center">
     <div class="formbook">
 
-      <%= simple_form_for([@granny,booking]) do |f| %>
+      <%= simple_form_for([@granny, booking]) do |f| %>
 
       <div class="form-inputs">
         <%= f.input :start_date, as: :date, html5: true %>
@@ -16,7 +16,7 @@
       <div class="form-actions">
 
         <div class="col-sm-12 text-center">
-        <%= f.button :submit, :class => "btn btn-primary" %>
+        <%= f.button :submit, :class => "btn btn-outline-warning btn-lg" %>
         <% end %>
       </div>
     </div>

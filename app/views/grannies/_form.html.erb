@@ -28,11 +28,11 @@
 
     <!-- Add selec2 for passions -->
     <%= f.association :passions,
-                collection: Passion.order('name ASC'),
-                input_html: {class: "select2", multiple: "true"} %>
+                      collection: Passion.order("name ASC"),
+                      input_html: { class: "select2", multiple: "true" } %>
     <div class="form-actions">
       <div class="col-sm-12 text-center">
-      <%= f.button :submit, :class => "btn btn-primary" %>
+      <%= f.button :submit, :class => "btn btn-outline-warning btn-lg " %>
       <% end %>
     </div>
   </div>
