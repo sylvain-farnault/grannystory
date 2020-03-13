@@ -2,7 +2,7 @@
 <hr>
 <div class="cards mt-5">
 <% @user.grannies.each do |granny| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/people)">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url'<%= cl_image_path granny.photo.key %>')">
     <%= link_to granny.name, granny_path(granny) %>
     <div class="badges-container">
 
