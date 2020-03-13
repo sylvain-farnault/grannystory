@@ -14,7 +14,7 @@
 
     <%= render "layouts/navbar" %>
 
-    <div class="<%= current_page?(root_path) ? "" : "container minVh" %>">
+    <div class="background <%= current_page?(root_path) ? "" : "container minVh" %>">
       <%= yield %>
     </div>
 
