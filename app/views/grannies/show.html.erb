@@ -1,6 +1,4 @@
 <div class="block1">
-
-
 	<div class="description">
     <nav class='d-flex align-items-center mt-4'>
     <%= cl_image_tag @granny.photo.key, class: "avatar-large"%>
@@ -20,9 +18,8 @@
 				<h3> Where can I find her ? </h3>
 				<p>Address : <%= @granny.address %></p>
 				<br>
-				Price : <%= @granny.price %>€/h 
+				Price : <%= @granny.price %>€/h <br>
 				Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
-
 			</div>
 			<hr>
 
@@ -36,7 +33,7 @@
 				<%= link_to "Edit", edit_granny_path(@granny) %>
 				<% end %> <br>
 
-				<%= link_to grannies_path do %>	
+				<%= link_to grannies_path do %>
 				<i class=“fa fa-history”></i> Back to Grannies
 
 				<% end %>
@@ -48,8 +45,8 @@
 		<%= render "/bookings/form", booking: @booking %>
 	</div>
 
-
 </div>
+
 
 
 

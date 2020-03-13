@@ -5,7 +5,7 @@ def create
     @granny = Granny.find(params[:granny_id])
     @booking.granny = @granny
     @booking.user = current_user
-    @booking.price = 12
+    @booking.price = @granny.price * @booking.duration
       if @booking.save
       redirect_to granny_path(@granny), notice: "You 've Booked a Granny 👵🏻"
     else
@@ -22,6 +22,6 @@ def create
   private
 
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :duration)
   end
 end
