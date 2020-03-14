@@ -26,6 +26,13 @@ flatpickr("#granny_birth_date", {
   }
 });
 
+const keepMinutesToZero = () => {
+  // const date_input = document.querySelector("#booking_start_date");
+  // console.log(date_input);
+  // date_input.value = "0";
+  // document.querySelector(".flatpickr-minute").disabled = true;
+};
+
 
 flatpickr("#booking_start_date", {
   minDate: "today",
@@ -34,7 +41,12 @@ flatpickr("#booking_start_date", {
   dateFormat: "d.m.Y H:i",
   time_24hr: true,
   minTime: "08:00",
-  maxTime: "19:00"
+  maxTime: "18:00",
+  minuteIncrement: 0,
+  "locale": {
+    "firstDayOfWeek": 1 // start week on Monday
+  }
+  // onClose: keepMinutesToZero()
 });
 
 
