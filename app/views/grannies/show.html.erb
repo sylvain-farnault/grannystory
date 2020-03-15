@@ -20,25 +20,24 @@
   			Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
   		</div>
   		<hr>
-  		<div class="link">
-  			<% if @granny.user == current_user %>
-  			 <%= link_to "Kill #{@granny.name}",
-                      granny_path(@granny),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" },
-                      class: "delete-button" %>
-  			 <%= link_to "Edit", edit_granny_path(@granny) %>
-  			<% end %>
-        <br>
-  			<%= link_to grannies_path do %>
-          <i class=“fa fa-history”></i> Back to Grannies
+  		<div class="link row">
+        <% if @granny.user == current_user %>
+        <%= link_to "Kill #{@granny.name}",
+                granny_path(@granny),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "btn btn-outline-warning btn-lg mr-3" %>
+
+          <%= link_to "Edit", edit_granny_path(@granny), :class => "btn btn-outline-warning btn-lg mr-3" %>
         <% end %>
-  		</div>
+        <%= link_to "Back to Grannies", grannies_path, :class => "btn btn-outline-warning btn-lg mr-3 " %>
+      </div>
     </div>
   </div>
 	<div class="form">
 		<%= render "/bookings/form", booking: @booking %>
 	</div>
+
   <% bookings_list = [] %>
   <% i = 0 %>
   <% @granny.bookings.where("start_date >= NOW()").order(:start_date).each do |booking| %>
@@ -56,8 +55,11 @@
   <div class="day">
   <% (8...19).each do |hour| %>
     <% class_list = "hour" %>
+    <% if bookings_list.size > index && bookings_list[index][:start_date].to_date < date %>
+			<% index += 1 %>
+    <% end %>
     <% if bookings_list.size > index && bookings_list[index][:start_date].to_date == date && hour == bookings_list[index][:start_date].hour.to_i %>
-    <% class_list << " busy" %>
+    	<% class_list << " busy" %>
       <% index += 1 %>
     <% end %>
     <div class="<%= class_list %>" data-start="<%= date.to_datetime.change({ hour: hour })  %>"><%= hour %></div>
