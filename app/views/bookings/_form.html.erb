@@ -1,24 +1,18 @@
-  <div>
-  <h4 class="text-center mt-7">Book a Granny Story</h2>
-  <div class="row justify-content-center">
-    <div class="formbook">
-
-      <%= simple_form_for([@granny, booking]) do |f| %>
-
-      <div class="form-inputs">
-        <%= f.input :start_date, as: :datetime, html5: true %>
-      </div>
-
-      <div class="form-inputs">
-        <%= f.input :duration, label: 'Duration (hour)', collection: 1..3, include_blank: false %>
-      </div>
-
-      <div class="form-actions">
-
-        <div class="col-sm-12 text-center">
+<h4 class="text-center mt-7">Book a Granny Story</h2>
+<div class="row justify-content-center">
+  <div class="formbook">
+    <%= simple_form_for([@granny, booking]) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :start_date, as: :datetime, html5: true %>
+    </div>
+    <div class="form-inputs">
+      <%= f.input :duration, label: 'Duration (hour)', collection: 1..3, include_blank: false %>
+    </div>
+    <div class="form-actions">
+      <div class="col-sm-12 text-center">
         <%= f.button :submit, :class => "btn btn-outline-warning btn-lg" %>
         <% end %>
       </div>
     </div>
   </div>
-  </div>
+</div>

@@ -1,4 +1,10 @@
 .simple-calendar {
+  .calendar-heading {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+  }
   .day {
     color: black;
   }
@@ -16,7 +22,7 @@
     div.hour {
       border: 1px solid #fff;
       width: 40px;
-      height: 40px;
+      height: 25px;
       background-color: rgba(0, 0, 0, 0.2);
       justify-content: center;
       color: grey;
@@ -61,12 +67,13 @@
   div.hour {
     border: 1px solid #fff;
     width: 40px;
-    height: 40px;
+    height: 25px;
     background-color: rgba(150, 150, 150, 0.2);
     justify-content: center;
     color: white;
     font-weight: lighter;
-    padding-top: 3px;
+    font-size: 12px;
+    padding-top: 4px;
   }
 
   div.available {

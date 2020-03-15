@@ -36,36 +36,43 @@
   </div>
 	<div class="form">
 		<%= render "/bookings/form", booking: @booking %>
+		<!-- Generate bookings from now, hour by hour -->
+	  <% bookings_list = [] %>
+	  <% i = 0 %>
+	  <% @granny.bookings.where("start_date >= NOW()").order(:start_date).each do |booking| %>
+	    <% (0...booking.duration).each do |hour| %>
+	      <% bookings_list[i] = {
+	                        start_date: booking.start_date.to_datetime + (hour/24.0),
+	                        user: booking.user.id } %>
+	      <% i += 1 %>
+	    <% end %>
+	  <% end %>
+	  <hr>
+	  <!-- mooving to the first booking we will have to display -->
+	  <% index = 0 %>
+	  <% if params[:start_date] && index < bookings_list.size %>
+	    <% while bookings_list[index][:start_date].to_date < params[:start_date].to_date do %>
+				<% index += 1 %>
+	    <% end %>
+	  <% end %>
+	  <!-- Display calendar -->
+	  <%= week_calendar number_of_weeks: 1 do |date| %>
+	  	<%= date.strftime("%a") %><br><%= date.day %>
+	  	<div class="day">
+	  		<% (8...19).each do |hour| %>
+	    	<% class_list = "hour" %>
+	    		<% if bookings_list.size > index && bookings_list[index][:start_date].to_date == date && hour == bookings_list[index][:start_date].hour.to_i %>
+	    			<% class_list << " busy" %>
+	      		<% index += 1 %>
+	    		<% end %>
+	    		<div class="<%= class_list %>" data-start="<%= date.to_datetime.change({ hour: hour })  %>">
+	    			<%= hour %>h
+	    		</div>
+	  		<% end %>
+	  	</div>
+		<% end %>
+		<div class="alert alert-light" role="alert">* Choose wisely available hours</div>
 	</div>
-
-  <% bookings_list = [] %>
-  <% i = 0 %>
-  <% @granny.bookings.where("start_date >= NOW()").order(:start_date).each do |booking| %>
-    <% (0...booking.duration).each do |hour| %>
-      <% bookings_list[i] = {
-                        start_date: booking.start_date.to_datetime + (hour/24.0),
-                        user: booking.user.id } %>
-      <% i += 1 %>
-    <% end %>
-  <% end %>
-  <hr>
-  <%= week_calendar number_of_weeks: 1 do |date| %>
-  <% index = 0 %>
-  <%= date.day %>
-  <div class="day">
-  <% (8...19).each do |hour| %>
-    <% class_list = "hour" %>
-    <% if bookings_list.size > index && bookings_list[index][:start_date].to_date < date %>
-			<% index += 1 %>
-    <% end %>
-    <% if bookings_list.size > index && bookings_list[index][:start_date].to_date == date && hour == bookings_list[index][:start_date].hour.to_i %>
-    	<% class_list << " busy" %>
-      <% index += 1 %>
-    <% end %>
-    <div class="<%= class_list %>" data-start="<%= date.to_datetime.change({ hour: hour })  %>"><%= hour %></div>
-  <% end %>
-  </div>
-<% end %>
 </div>
 
 
