@@ -1,53 +1,78 @@
 <div class="block1">
 	<div class="description">
     <nav class='d-flex align-items-center mt-4'>
-    <%= cl_image_tag @granny.photo.key, class: "avatar-large" %>
-		<h4><%= @granny.name.capitalize %> <%= ((Date.today - @granny.birth_date) / 365).to_i %> ans </h4>
-  </nav>
-<br>
-
-		<!-- iterate through @granny.passions -->
-		<h3> Her hobbies </h3>
-
-		<% @granny.passions.each do |passion| %>
-    <span class="badge badge-pill badge-secondary"><%= passion.name %></span>
-		<% end %>
-		<div>
-			<br>
-			<div>
-				<h3> Where can I find her ? </h3>
-				<p>Address : <%= @granny.address %></p>
-				<br>
-				Price : <%= @granny.price %>€/h <br>
-				Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
-			</div>
-			<hr>
-
-			<div class="link row">
-				<% if @granny.user == current_user %>
-				<%= link_to "Kill #{@granny.name}",
+      <%= cl_image_tag @granny.photo.key, class: "avatar-large"%>
+		  <h4><%= "#{@granny.name.capitalize} - #{((Date.today - @granny.birth_date) / 365).to_i} yo" %></h4>
+    </nav>
+    <br>
+    <!-- iterate through @granny.passions -->
+  	<h3> Her hobbies </h3>
+  	<% @granny.passions.each do |passion| %>
+      <span class="badge badge-pill badge-secondary"><%= passion.name %></span>
+  	<% end %>
+  	<div>
+  		<br>
+  		<div>
+  			<h3> Where can I find her ? </h3>
+  			<p>Address : <%= @granny.address %></p>
+  			<br>
+  			Price : <%= @granny.price %>€/h <br>
+  			Owner : <%= link_to @granny.user.user_alias, user_path(@granny.user) %> <br>
+  		</div>
+  		<hr>
+  		<div class="link row">
+        <% if @granny.user == current_user %>
+        <%= link_to "Kill #{@granny.name}",
                 granny_path(@granny),
                 method: :delete,
                 data: { confirm: "Are you sure?" },
                 class: "btn btn-outline-warning btn-lg mr-3" %>
-				
-				<% end %> 
 
-				
-					
-					<%= link_to "Edit", edit_granny_path(@granny), :class => "btn btn-outline-warning btn-lg mr-3" %>
-					
-			
-				<%= link_to "Back to Grannies", grannies_path, :class => "btn btn-outline-warning btn-lg mr-3 " %>
-				
-			</div>
-		</div>
-
-	</div>
+          <%= link_to "Edit", edit_granny_path(@granny), :class => "btn btn-outline-warning btn-lg mr-3" %>
+        <% end %>
+        <%= link_to "Back to Grannies", grannies_path, :class => "btn btn-outline-warning btn-lg mr-3 " %>
+      </div>
+    </div>
+  </div>
 	<div class="form">
 		<%= render "/bookings/form", booking: @booking %>
+		<!-- Generate bookings from now, hour by hour -->
+	  <% bookings_list = [] %>
+	  <% i = 0 %>
+	  <% @granny.bookings.where("start_date >= NOW()").order(:start_date).each do |booking| %>
+	    <% (0...booking.duration).each do |hour| %>
+	      <% bookings_list[i] = {
+	                        start_date: booking.start_date.to_datetime + (hour/24.0),
+	                        user: booking.user.id } %>
+	      <% i += 1 %>
+	    <% end %>
+	  <% end %>
+	  <hr>
+	  <!-- mooving to the first booking we will have to display -->
+	  <% index = 0 %>
+	  <% if params[:start_date] && index < bookings_list.size %>
+	    <% while bookings_list[index][:start_date].to_date < params[:start_date].to_date do %>
+				<% index += 1 %>
+	    <% end %>
+	  <% end %>
+	  <!-- Display calendar -->
+	  <%= week_calendar number_of_weeks: 1 do |date| %>
+	  	<%= date.strftime("%a") %><br><%= date.day %>
+	  	<div class="day">
+	  		<% (8...19).each do |hour| %>
+	    	<% class_list = "hour" %>
+	    		<% if bookings_list.size > index && bookings_list[index][:start_date].to_date == date && hour == bookings_list[index][:start_date].hour.to_i %>
+	    			<% class_list << " busy" %>
+	      		<% index += 1 %>
+	    		<% end %>
+	    		<div class="<%= class_list %>" data-start="<%= date.to_datetime.change({ hour: hour })  %>">
+	    			<%= hour %>h
+	    		</div>
+	  		<% end %>
+	  	</div>
+		<% end %>
+		<div class="alert alert-light" role="alert">* Choose wisely available hours</div>
 	</div>
-
 </div>
 
 

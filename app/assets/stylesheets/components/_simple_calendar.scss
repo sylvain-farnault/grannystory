@@ -1,0 +1,87 @@
+.simple-calendar {
+  .calendar-heading {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .day {
+    color: black;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {
+    div.hour {
+      border: 1px solid #fff;
+      width: 40px;
+      height: 25px;
+      background-color: rgba(0, 0, 0, 0.2);
+      justify-content: center;
+      color: grey;
+      font-weight: lighter;
+      padding-top: 3px;
+    }
+  }
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+
+  thead tr {
+    color: black;
+    border-bottom: 0px;
+    text-align: center;
+  }
+  thead tr th {
+    padding: 0px 8px !important;
+  }
+  tbody {
+    text-align: center;
+    height: 1;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  tbody tr td {
+    padding: 2px 8px !important;
+  }
+
+  div.day {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.hour {
+    border: 1px solid #fff;
+    width: 40px;
+    height: 25px;
+    background-color: rgba(150, 150, 150, 0.2);
+    justify-content: center;
+    color: white;
+    font-weight: lighter;
+    font-size: 12px;
+    padding-top: 4px;
+  }
+
+  div.available {
+
+  }
+
+  div.busy {
+    background-color: rgba(250, 0, 0, 0.2);;
+  }
+
+}
